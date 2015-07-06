@@ -8,30 +8,47 @@ Item {
 
     focus: true
     Keys.onPressed: {
-        if (event.key === Qt.Key_W) {
+        switch (event.key) {
+        case Qt.Key_W:
+            leftJoystickController.moveUp();
             console.log("left joystick move up");
             event.accepted = true;
-        } else if (event.key === Qt.Key_Z) {
-            console.log("left joystick move up");
+            break;
+        case  Qt.Key_Z:
+            leftJoystickController.moveDown();
+            console.log("left joystick move down");
             event.accepted = true;
-        } else if (event.key === Qt.Key_A) {
+            break;
+        case Qt.Key_A:
+            leftJoystickController.moveLeft();
             console.log("left joystick move left");
             event.accepted = true;
-        } else if (event.key === Qt.Key_S) {
+            break;
+        case Qt.Key_S:
+            leftJoystickController.moveRight();
             console.log("left joystick move right");
             event.accepted = true;
-        } else if (event.key === Qt.Key_I) {
+            break;
+        case Qt.Key_I:
+            rightJoystickController.moveUp();
             console.log("right joystick move up");
             event.accepted = true;
-        } else if (event.key === Qt.Key_J) {
-            console.log("right joystick move up");
-            event.accepted = true;
-        } else if (event.key === Qt.Key_K) {
-            console.log("right joystick move left");
-            event.accepted = true;
-        } else if (event.key === Qt.Key_M) {
+            break;
+        case Qt.Key_J:
+            rightJoystickController.moveRight();
             console.log("right joystick move right");
             event.accepted = true;
+            break;
+        case Qt.Key_K:
+            rightJoystickController.moveLeft();
+            console.log("right joystick move left");
+            event.accepted = true;
+            break;
+        case Qt.Key_M:
+            rightJoystickController.moveDown();
+            console.log("right joystick move down");
+            event.accepted = true;
+            break;
         }
     }
 
